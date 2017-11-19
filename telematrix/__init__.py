@@ -278,7 +278,7 @@ async def matrix_transaction(request):
                 else:
                     displayname = get_username(user_id)
 
-                if content['membership'] == 'join':
+                if content['membership'] == 'join' and False:
                     oldname = sender.name if sender else get_username(user_id)
                     try:
                         displayname = content['displayname'] or get_username(user_id)
