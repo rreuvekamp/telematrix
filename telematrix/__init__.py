@@ -264,7 +264,7 @@ async def matrix_transaction(request):
                     print('Unsupported message type {}'.format(content['msgtype']))
                     print(json.dumps(content, indent=4))
 
-            elif event['type'] == 'm.room.member':
+            elif event['type'] == 'm.room.member' and False:
                 if matrix_is_telegram(event['state_key']):
                     continue
 
@@ -278,7 +278,7 @@ async def matrix_transaction(request):
                 else:
                     displayname = get_username(user_id)
 
-                if content['membership'] == 'join' and False:
+                if content['membership'] == 'join':
                     oldname = sender.name if sender else get_username(user_id)
                     try:
                         displayname = content['displayname'] or get_username(user_id)
